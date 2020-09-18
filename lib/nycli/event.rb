@@ -1,4 +1,9 @@
 class NYCLI::Event
+
+  @@blu = "\e[1;34m"
+  @@green = "\e[1;32m"
+  @@white = "\e[0m"
+  
   attr_accessor :name, :date, :day, :time, :venue, :description, :link
   @@all = []
 
@@ -16,6 +21,15 @@ class NYCLI::Event
       puts "#{counter}. #{event.name}"
       counter += 1
     end
+  end
+
+  def self.details(index)
+    event = @@all[index]
+    puts "\n#{@@blu}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+    puts "\n#{@@blu}#{event.name.upcase}\n\n#{@@green}#{event.date} || #{event.time}\n\n@#{event.venue}"
+    puts "#{event.description}"
+    (event.link != nil) ? (puts "\n#{@@white}To read more or purchase tickets, visit #{event.link}") : (puts "More info To Be Announced")
+    puts "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
   end
 
   def self.dates

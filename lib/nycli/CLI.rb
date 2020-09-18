@@ -38,7 +38,7 @@ class NYCLI::CLI
     elsif input.to_i > 0
       if input.to_i <= NYCLI::Event.all.count
         index = input.to_i - 1
-        # NYCLI::Event.details(index)
+        NYCLI::Event.details(index)
       end
 
     else
