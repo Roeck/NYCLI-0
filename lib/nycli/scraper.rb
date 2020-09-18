@@ -1,0 +1,2 @@
+class NYCLI::Scraper
+end

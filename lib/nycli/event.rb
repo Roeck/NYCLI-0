@@ -1,0 +1,2 @@
+class NYCLI::Event
+end
