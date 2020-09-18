@@ -20,6 +20,10 @@ class NYCLI::CLI
 
   puts "numbered events"
 
+  today = NYCLI::Scraper.new()
+  today.show_events
+  NYCLI::Event.names
+
   # Show more events option:
 
   def self.user_prompt
@@ -28,7 +32,14 @@ class NYCLI::CLI
 
   def self.action(input)
     if input == 'more'
-      puts "show more events"
+      NYCLI::Scraper.more
+      NYCLI::CLI.user_prompt
+
+    elsif input.to_i > 0
+      if input.to_i <= NYCLI::Event.all.count
+        index = input.to_i - 1
+        # NYCLI::Event.details(index)
+      end
 
     else
       puts "\n#{@@red}Invalid input. Try again!#{@@white}"

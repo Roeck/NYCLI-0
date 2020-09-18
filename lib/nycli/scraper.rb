@@ -38,4 +38,17 @@ class NYCLI::Scraper
       event.link = "https://www.nyc.com" + item.css("a.venuelink").attr("href").text if item.css("a.venuelink").attr("href")
     end
   end
+
+  def self.page
+    @@page
+  end
+
+  # Events re-iteration:
+
+  def self.more
+    @@page += 1
+    NYCLI::Scraper.new("https://www.nyc.com/events/?int4=5&p=" + "#{self.page}").show_events
+    NYCLI::Event.more_names
+  end
+  
 end
