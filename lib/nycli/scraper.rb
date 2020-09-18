@@ -1,5 +1,6 @@
 class NYCLI::Scraper
   attr_accessor :url
+  @@page = 1
 
   def initialize(url = "https://www.nyc.com/events/?int4=5")
     @url = url
@@ -13,19 +14,7 @@ class NYCLI::Scraper
     self.get_page.css(".eventrecords li[itemtype='http://schema.org/Event']")
   end
 
-  # Scraping events by elements
-
-  def show_events
-    self.get_events.each do |item|
-      event = NYCLI::Event.new
-      event.name = item.css("h3").text.strip
-      event.date = item.css(".desktop-date").text.gsub("\n                    ", ' ').strip
-      event.time = item.css(".datevenue strong.nyc-mobile-hidden").text
-      event.description = item.css("p[itemprop='description']").text.gsub("read more", '').strip
-      event.venue = item.css("span[itemprop='name']").text
-      event.link = "https://www.nyc.com" + item.css("a.venuelink").attr("href").text if item.css("a.venuelink").attr("href")
-    end
-  end
+  # Scraping events by elements:
 
   def show_events
     self.get_events.each do |item|
@@ -50,5 +39,5 @@ class NYCLI::Scraper
     NYCLI::Scraper.new("https://www.nyc.com/events/?int4=5&p=" + "#{self.page}").show_events
     NYCLI::Event.more_names
   end
-
+  
 end

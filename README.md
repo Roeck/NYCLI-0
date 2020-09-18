@@ -1,40 +1,23 @@
-# NYCLI
+## Description:
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/NYCLI`. To experiment with that code, run `bin/console` for an interactive prompt.
+- This gem allows users to scrape current NYC events from the presented menu, returning the event details such as description, dates, location and tickets URL.
 
-TODO: Delete this and the text above, and describe your gem
+- For running the application without this gem installed, run the executable file with ./bin/nycli.
 
-## Installation
+## Installation:
 
-Add this line to your application's Gemfile:
+Add to your gemfile:
 
-```ruby
-gem 'NYCLI'
-```
+gem 'nycli'
 
-And then execute:
+And then run:
 
-    $ bundle install
+\$ bundle
 
-Or install it yourself as:
+Or:
 
-    $ gem install NYCLI
+\$ gem install nycli
 
-## Usage
+## Contribution:
 
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/<github username>/NYCLI.
-
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+Bug reports and pull requests are welcome on GitHub at https://github.com/Roeck/NYCLI

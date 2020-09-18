@@ -23,6 +23,21 @@ class NYCLI::Event
     end
   end
 
+  def self.more_names
+    counter = 1
+    # Scraper pulls in 20 items per page
+    starter = NYCLI::Scraper.page * 20 - 19 # formula to continue numbering
+    more_events = starter
+
+    puts "\n"
+    self.all.each do |event|
+      event = "#{counter}- #{event.name.upcase}"
+      puts event if counter == more_events
+      counter += 1
+      more_events += 1 if counter > starter
+    end
+  end
+
   def self.details(index)
     event = @@all[index]
     puts "\n#{@@blu}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"

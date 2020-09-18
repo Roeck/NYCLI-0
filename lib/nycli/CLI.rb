@@ -1,6 +1,6 @@
 class NYCLI::CLI
 
-# Color variables:
+  # Color variables:
 
   @@blu = "\e[1;34m"
   @@green = "\e[1;32m"
@@ -17,8 +17,6 @@ class NYCLI::CLI
   #{@@green}\n"
 
   puts "\n#{@@green}Choose your desired events by their numbers:#{@@white}\n\n"
-
-  puts "numbered events"
 
   today = NYCLI::Scraper.new()
   today.show_events
