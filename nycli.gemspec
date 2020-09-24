@@ -8,11 +8,11 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "CLI Data Scraping Gem"
   spec.description   = "For scraping the latest NYC events"
-  spec.homepage      = "https://github.com/Roeck/NYCLI"
+  spec.homepage      = "https://rubygems.org"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 
-  spec.metadata["allowed_push_host"] = "https://github.com/Roeck/NYCLI"
+  spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
   spec.metadata["homepage_uri"] = spec.homepage
   
