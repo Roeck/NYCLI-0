@@ -38,7 +38,7 @@ class NYCLI::Event
     end
   end
 
-  def self.details(index)
+  def self.details(index) #instance method instead
     event = @@all[index]
     puts "\n#{@@blu}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     puts "\n#{@@blu}#{event.name.upcase}\n\n#{@@green}#{event.date} || #{event.time}\n\n@#{event.venue}"
@@ -53,3 +53,5 @@ class NYCLI::Event
   end
 
 end
+
+

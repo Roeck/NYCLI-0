@@ -16,7 +16,7 @@ class NYCLI::List
     end
   end
 
-def view
+  def view
     self.events.each do |event|
       puts "\t#{event.name}"
     end

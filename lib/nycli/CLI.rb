@@ -9,8 +9,8 @@ class NYCLI::CLI
   @@red = "\e[1;31m"
 
   # Menu:
-
-   puts "#{@@blu}
+def self.call
+  puts "#{@@blu}
   .~~~~~~~~~~~~~~~~.
   | #{@@yellow}WELCOME TO NYC!#{@@blu}|
   .~~~~~~~~~~~~~~~~.
@@ -21,6 +21,7 @@ class NYCLI::CLI
   today = NYCLI::Scraper.new()
   today.show_events
   NYCLI::Event.names
+
 
   # Show more events option:
 
@@ -44,6 +45,7 @@ class NYCLI::CLI
     end
   end
 
+
   # Exit program:
   
   puts "\n#{@@yellow}Type 'exit' to quit."
@@ -55,4 +57,5 @@ class NYCLI::CLI
     input = gets.strip
   end
       puts "\n#{@@yellow}Goodbye!#{@@white}\n\n"
+  end
 end
