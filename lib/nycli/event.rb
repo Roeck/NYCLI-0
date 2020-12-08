@@ -31,14 +31,14 @@ class NYCLI::Event
 
     puts "\n"
     self.all.each do |event|
-      event = "#{counter}- #{event.name.upcase}"
+      event = "#{counter}- #{event.name}"
       puts event if counter == more_events
       counter += 1
       more_events += 1 if counter > starter
     end
   end
 
-  def self.details(index) #instance method instead
+  def self.details(index) 
     event = @@all[index]
     puts "\n#{@@blu}~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
     puts "\n#{@@blu}#{event.name.upcase}\n\n#{@@green}#{event.date} || #{event.time}\n\n@#{event.venue}"

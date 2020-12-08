@@ -3,5 +3,5 @@
 require 'bundler/setup'
 require_relative "../lib/environment.rb"
 
-NYCLI::CLI.call
+cli = NYCLI::CLI.call
 

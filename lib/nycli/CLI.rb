@@ -8,7 +8,7 @@ class NYCLI::CLI
   @@yellow = "\e[1;33m"
   @@red = "\e[1;31m"
 
-  # Menu:
+  
 def self.call
   puts "#{@@blu}
   .~~~~~~~~~~~~~~~~.
@@ -21,7 +21,6 @@ def self.call
   today = NYCLI::Scraper.new()
   today.show_events
   NYCLI::Event.names
-
 
   # Show more events option:
 
