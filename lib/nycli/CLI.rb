@@ -33,6 +33,10 @@ def self.call
       NYCLI::Scraper.more
       NYCLI::CLI.user_prompt
 
+    elsif
+      input == 'back'
+      NYCLI::Event.names
+
     elsif input.to_i > 0
       if input.to_i <= NYCLI::Event.all.count
         index = input.to_i - 1
