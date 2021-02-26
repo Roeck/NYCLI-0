@@ -2,30 +2,32 @@ class NYCLI::CLI
 
   # Color variables:
 
-  @@blu = "\e[1;34m"
-  @@green = "\e[1;32m"
   @@white = "\e[0m"
-  @@yellow = "\e[1;33m"
   @@red = "\e[1;31m"
+  @@green = "\e[1;32m"
+  @@yellow = "\e[1;33m"
+  @@blue = "\e[1;34m"
 
-  
-def self.call
-  puts "#{@@blu}
-  .~~~~~~~~~~~~~~~~.
-  | #{@@yellow}WELCOME TO NYC!#{@@blu}|
-  .~~~~~~~~~~~~~~~~.
-  #{@@green}\n"
+  # Welcoming:
 
-  puts "\n#{@@green}Choose your desired events by their numbers:#{@@white}\n\n"
+  def self.call
+    puts "#{@@blue}
+    .~~~~~~~~~~~~~~~~~.
+    | #{@@yellow}WELCOME TO NYC!#{@@blue} |
+    .~~~~~~~~~~~~~~~~~.
+    "
+    puts "#{@@green}Select your desired events by their numbers:#{@@white}"
 
-  today = NYCLI::Scraper.new()
-  today.show_events
-  NYCLI::Event.names
+    today = NYCLI::Scraper.new()
+    today.show_events
+    NYCLI::Event.names
 
-  # Show more events option:
+  # Show options:
 
   def self.user_prompt
-    puts "\n#{@@green}To view more events, type 'more'#{@@white}"
+    puts "\n\n#{@@yellow}Type 'more' to see more events.#{@@white}\n\n"
+    puts "#{@@blue}Type 'back' to return to the initial list.#{@@white}\n\n"
+    puts "#{@@red}Type 'exit' to quit the application.#{@@white}\n\n"
   end
 
   def self.action(input)
@@ -44,14 +46,12 @@ def self.call
       end
 
     else
-      puts "\n#{@@red}Invalid input. Try again!#{@@white}"
+      puts "\n\n#{@@blue}Until next time!#{@@white}"
     end
   end
 
-
   # Exit program:
   
-  puts "\n#{@@yellow}Type 'exit' to quit."
   NYCLI::CLI.user_prompt
   input = gets.strip
 
@@ -59,6 +59,6 @@ def self.call
     NYCLI::CLI.action(input)
     input = gets.strip
   end
-      puts "\n#{@@yellow}Goodbye!#{@@white}\n\n"
+    puts "\n\n#{@@blue}Until next time!#{@@white}"
   end
 end
